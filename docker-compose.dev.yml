@@ -1,0 +1,22 @@
+version: "3"
+services:
+  api:
+    build: 
+      context: ./api
+      args: 
+        NODE_ENV: dev
+    volumes:
+      - ./api/:/app/api/
+      - /app/api/node_modules/
+    command: sh -c 'cd api && npm run dev'
+  
+  web:
+    build: 
+      context: ./web
+      args: 
+        NODE_ENV: dev
+    volumes:
+      - ./web/:/app/web/
+      - /app/web/node_modules/
+    command: sh -c 'cd web && npm run start'
+    

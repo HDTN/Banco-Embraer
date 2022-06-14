@@ -1,0 +1,16 @@
+version: "3"
+services: 
+  api:
+    build: 
+      context: ./api
+      args: 
+        NODE_ENV: prod
+    command: sh -c 'cd api && npm run start'
+  
+  web:
+    build: 
+      context: ./web
+      args: 
+        NODE_ENV: prod
+    command: sh -c 'cd web && npm run start'
+    

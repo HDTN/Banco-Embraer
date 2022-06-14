@@ -1,0 +1,17 @@
+{
+  "name": "teste-embraer",
+  "version": "1.0.0",
+  "description": "O projeto Banco Embraer é o resultado do teste passado à Hybrid Development. O projeto consiste em duas aplicações, uma front-end em ReactJs e outra backend em NodeJs.  O bando de dados utilizado é o MongoDB.",
+  "main": "index.js",
+  "scripts": {
+    "up": "COMPOSE_HTTP_TIMEOUT=120 docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d --build",
+    "down": "COMPOSE_HTTP_TIMEOUT=120 docker-compose -f docker-compose.yml -f docker-compose.dev.yml down -v",
+    "web": "cd web && npm run start",
+    "api": "cd api && npm run dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+

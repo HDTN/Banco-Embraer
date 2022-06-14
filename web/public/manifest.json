@@ -1,0 +1,15 @@
+{
+  "short_name": "Hybrid",
+  "name": "Teste Embraer - Hybrid Development",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "500x500",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

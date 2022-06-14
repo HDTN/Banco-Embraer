@@ -1,0 +1,19 @@
+FROM node:alpine
+
+WORKDIR /app
+
+COPY package*.json ./web/
+
+RUN mkdir -p ./web/node_modules
+RUN chown node:node ./web/node_modules
+RUN mkdir -p ./web/node_modules/.cache && chmod -R 777 ./web/node_modules/.cache
+
+ARG NODE_ENV
+RUN if [ "$NODE_ENV" = "dev" ]; \
+        then cd web && npm install; \
+        else cd web && npm install --omit=dev; \
+        fi
+
+
+COPY . ./web/
+CMD [ "cd", "web", "&&", "npm", "start" ]
